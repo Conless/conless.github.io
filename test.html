@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS 屏幕滑入滑出</title>
+    <style>
+        .Left {
+            width: 250px;
+            border: 1px dashed red;
+            background-color: aquamarine;
+            position: absolute;
+            transition: all 1s;
+            left: -260px;
+            top: 400px;
+        }
+ 
+        .Right {
+            width: 250px;
+            border: 1px dashed red;
+            background-color: aquamarine;
+            position: absolute;
+            transition: all 1s;
+            right: -260px;
+            top: 400px;
+        }
+ 
+        #main {
+            width: 100%;
+            position: fixed;
+        }
+ 
+        #up {
+            width: 250px;
+            border: 1px dashed red;
+            background-color: aquamarine;
+            position: absolute;
+            transition: all 1s;
+            top: -144px;
+            left: 600px;
+        }
+ 
+        #down {
+            width: 250px;
+            border: 1px dashed red;
+            background-color: aquamarine;
+            position: absolute;
+            transition: all 1s;
+            bottom: -173px;
+            left: 600px;
+        }
+ 
+        #mainDown {
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <input type="button" value="滑出" style=" width: 85px; height: 33px;" onclick="btnOut();" />
+    <input type="button" value="滑入" style=" width: 85px; height: 33px;" onclick="btnIn();" />
+ 
+    <div class="Left">
+        <ul>
+            <li>左边列表</li>
+            <li>左边列表</li>
+            <li>左边列表</li>
+            <li>左边列表</li>
+        </ul>
+        <span onclick="btnIn();">关闭</span>
+    </div>
+ 
+    <div id="main">
+        <div class="Right">
+            <ul>
+                <li>右边列表</li>
+                <li>右边列表</li>
+                <li>右边列表</li>
+                <li>右边列表</li>
+            </ul>
+            <span onclick="btnIn();">关闭</span>
+        </div>
+    </div>
+ 
+    <div id="up">
+        <ul>
+            <li>上边列表</li>
+            <li>上边列表</li>
+            <li>上边列表</li>
+            <li>上边列表</li>
+        </ul>
+        <span onclick="btnIn();">关闭</span>
+    </div>
+ 
+    <div id="mainDown">
+        <div id="down">
+            <ul>
+                <li>下边列表</li>
+                <li>下边列表</li>
+                <li>下边列表</li>
+                <li>下边列表</li>
+            </ul>
+            <span onclick="btnIn();">关闭</span>
+        </div>
+    </div>
+    <script>
+        function btnOut() {
+            $(".Left").animate({}, 1500, function () {
+                $(".Left").css({ "left": "100px" });
+            });
+ 
+            $(".Right").animate({}, 1500, function () {
+                $(".Right").css({ "right": "100px" });
+            })
+ 
+            $("#up").animate({}, 1500, function () {
+                $("#up").css({ "top": "50px" });
+            });
+ 
+            $("#down").animate({}, 1500, function () {
+                $("#down").css({ "bottom": "50px" });
+            });
+        }
+ 
+        function btnIn() {
+            $(".Left").animate({}, 1500, function () {
+                $(".Left").css({ "left": "-260px" });
+            });
+ 
+            $(".Right").animate({}, 1500, function () {
+                $(".Right").css({ "right": "-260px" });
+            })
+ 
+            $("#up").animate({}, 1500, function () {
+                $("#up").css({ "top": "-144px" });
+            });
+ 
+            $("#down").animate({}, 1500, function () {
+                $("#down").css({ "bottom": "-144px" });
+            });
+        }
+    </script>
+</body>
+</html>
