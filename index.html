@@ -118,7 +118,7 @@
             <div class="mob-menu">
                 <div class="mob-menu-content">
                     <div class="float-left">
-                        <p class="menu-title">Jone Doe</p>
+                        <p class="menu-title"><img src="images/profile.png" width="60px"></p>
                     </div>
                     <div class="float-right">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -531,10 +531,6 @@
 
                                                     <img src="images/work-5.jpg" alt="" class="margin-top-45">
 
-                                                    <!--= Youtube Video =-->
-                                                    <iframe height="342" src="http://www.17sucai.com/"
-                                                        class="margin-top-45"></iframe>
-
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <h3>Project Popup</h3>
@@ -670,40 +666,57 @@
 
                 <!--Start Blog Section-->
                 <section class="blog padding-bottom-90 pt-page" id="blog">
-                    <div style="text-align: right;">
-                        <style type="text/css">
-                            .imgtest {
+                    <style type="text/css">
+                        .imgtest {
+                            display: inline-block;
+                            width: 10%;
+                            height: 10%;
+                            overflow: hidden;
+                            vertical-align: middle;
+                        }
+
+                        .imgtest:hover img {
+                            transition-duration: 0.4s;
+                            transform: rotate(360deg);
+                        }
+
+                        .text {
+                            display: inline-block;
+                            font-size: x-large;
+                        }
+
+                        @media (max-width : 768px) {
+                            .text {
+                                font-size: medium;
                                 display: inline-block;
-                                width: 10%;
-                                height: 10%;
-                                overflow: hidden;
-                                vertical-align: middle;
                             }
-                            .imgtest:hover img {
-                                transition-duration: 0.4s;
-                                transform: rotate(360deg);
+                        }
 
-                            }
-                        </style>
-                        <script>
-                            function sleep(n) {
-                                var start = new Date().getTime();
-                                while (true) {
-                                    if (new Date().getTime() - start > n) {
-                                        break;
-                                    }
-                                }
-                            }
-                            function btnIn() {
-                                $(splitlayout).addClass('do-sth');
-                                setTimeout(function () { window.location.href = "http://conless.dev/blog" }, 500);
-                            }
-                        </script>
-                        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                        .textbutton {
+                            display: table-cell;
+                            vertical-align: middle;
+                            text-align: right;
+                        }
 
-                        <h3 style="display: inline-block;">Click here to enter a fancy
-                            blog&emsp;&emsp;&emsp;</h3>
-                        <a onclick="btnIn();"><div class="imgtest"> <img style="display: inline-block;" src="images/0.png"></div></a>
+                        @media (max-width : 768px) {
+                            .textbutton {
+                                display: table-cell;
+                                vertical-align: center;
+                                text-align: center;
+                            }
+                        }
+                    </style>
+                    <script>
+                        function myTestFunction() {
+                            $(splitlayout).addClass('do-sth');
+                            setTimeout(function () { window.location.href = "https://conless.dev/blog" }, 500);
+                        }
+                    </script>
+                    <div class="textbutton">
+                        <div class="text">Click here to enter a fancy blog&emsp;</div>
+                        <a onclick="myTestFunction();">
+                            <div class="imgtest"> <img style="display: inline-block;" src="images/0.png"></div>
+                        </a>
                     </div>
                 </section>
                 <!--End Blog Section-->
